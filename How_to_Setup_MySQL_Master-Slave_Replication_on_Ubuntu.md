@@ -24,7 +24,7 @@ On the Master node, scroll and locate the **bind-address** attribute as shown be
 Change the loopback address to match the IP address of the Master node.
         bind-address  	=10.128.0.28
 
-Next, specify a value for the server-id attribute in the [mysqld] section. The number you choose should not match any other server-id number. Let’s assign the value 1.
+Next, specify a value for the **server-id** attribute in the **[mysqld]** section. The number you choose should not match any other server-id number. Let’s assign the value 1.
 
     server-id	 =1
 
@@ -65,7 +65,7 @@ just like the **master server**, proceed to edit the following lines.
 
         bind-address           = 10.128.0.29
 
-As before, specify a value for the server-id attribute in the [mysqld] section. This time select a different value. Let’s go with 2.
+As before, specify a value for the **server-id** attribute in the **[mysqld]** section. This time select a different value. Let’s go with 2.
 
         server-id		=2 
     
@@ -93,7 +93,7 @@ In this step, you will need to make some configuration that will allow the slave
 
 To allow the slave server to replicate the Master server, run the command.
 
-    mysql> CHANGE MASTER TO MASTER_HOST ='10.128.0.28', MASTER_USER ='replication_user', MASTER_PASSWORD ='Saturn@1234', MASTER_LOG_FILE = 'mysql-bin.000002', MASTER_LOG_POS = 1643;
+    mysql> CHANGE MASTER TO MASTER_HOST ='10.128.0.28', MASTER_USER ='replication_user', MASTER_PASSWORD ='ahmad@123', MASTER_LOG_FILE = 'mysql-bin.000002', MASTER_LOG_POS = 1643;
 
 If you are keen enough, you will observe that we’ve used the mysql-bin.00002 value and position ID 1643 earlier displayed after creating the slave replication user.
 
